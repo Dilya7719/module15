@@ -1,0 +1,17 @@
+<!--  наследуемся от шаблона default.html, который мы создавали для flatpages -->
+{% extends 'flatpages/default.html' %}
+{% load news_filters %}
+
+{% block title %}
+New
+{% endblock title %}
+
+{% block content %}
+<br>
+<input type="button" value="Назад к списку новостей" onClick='location.href="http://127.0.0.1:8000/news/"'>
+<input type="button" value="Подписка" onClick='location.href="http://127.0.0.1:8000/subscriptions/"'>
+<br>
+<h2>{{ post.post_header }}</h2>
+<h4><br>{{ post.post_text }}</h4>
+<h3><br>Опубликовано {{ post.post_create_date|date:'d.m.Y' }}</h3>
+{% endblock content %}
