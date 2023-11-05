@@ -3,7 +3,7 @@ info:
   title: Портал новостей OpenApi спецификация
   version: 0.0.1
 servers:
-  - url: http://127.0.0.1:8000/swagger-ui/
+  - url: http://127.0.0.1:8000/
     description: ''
 paths:
   /news:
@@ -105,11 +105,11 @@ components:
     New:
       type: object
       required:
-        - id
+        - pk
         - post_header
         - post_text
       properties:
-        id:
+        pk:
           type: string
           example: 123
         post_header:
@@ -118,9 +118,6 @@ components:
         post_text:
           type: string
           description: Текст новости
-        post_create_date:
-          type: string
-          description: Дата публикации новости
     News:
       type: array
       items:
